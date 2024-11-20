@@ -39,7 +39,85 @@
 <h2>HW 1 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3>w10</h3>
+<h3>w11</h3>
+<p>1.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
+
+# 圆心坐标和半径
+h, k = 5, 5  # 圆心位置
+r = 4  # 半径
+
+# 画出 10x10 的区域
+for y in range(10):
+    for x in range(10):
+        # 计算点 (x, y) 到圆心 (h, k) 的距离
+        distance = math.sqrt((x - h) ** 2 + (y - k) ** 2)
+        
+        # 判断距离是否接近半径，允许一些误差来形成一个圆形
+        if abs(distance - r) &lt; 1.0:
+            print('*', end='')  # 输出 * 表示在此位置绘制星号
+        else:
+            print(' ', end='')  # 否则输出空格
+        
+    print()  # 每一行打印完后换行
+</pre>
+<p>2.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width = 400, height = 400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每一格的 pixel 數
+gs = 20  # 每一格大小为20px
+
+# gs*tc = canvas width and height
+ctx = canvas.getContext("2d")
+
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+    
+def grid(width, height, grid_pix):
+    """绘制网格"""
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+def fill(x, y, color):
+    """填充某个格子"""
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+
+def drawCircle(center_x, center_y, radius):
+    """绘制圆形"""
+    # 圆心和半径转换为网格坐标
+    for i in range(10):  # 10x10 网格
+        for j in range(10):
+            # 计算每个网格的中心坐标
+            grid_x = (i * gs) + gs / 2
+            grid_y = (j * gs) + gs / 2
+            
+            # 计算 (grid_x, grid_y) 到圆心的距离
+            distance = math.sqrt((grid_x - center_x) ** 2 + (grid_y - center_y) ** 2)
+            
+            # 如果距离小于圆的半径，则填充该格
+            if distance &lt;= radius:
+                fill(i * gs + gs / 2, j * gs + gs / 2, "black")
+
+# 绘制10x10的网格
+grid(10, 10, gs)
+
+# 绘制圆形，圆心为(5, 5)，半径为4个像素（对应网格大小）
+drawCircle(5 * gs, 5 * gs, 4 * gs)
+</pre>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/UMrDbOUAwmU" width="560"></iframe></p><h3>w10</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/TohG2yshfyc" width="560"></iframe><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hBXjqyET7l8" width="560"></iframe><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/LrRYGSHrhRo" width="560"></iframe></p><h3>w7</h3>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/9YxqYS4V9Ms?si=A2K6yY3n3zlQpMiS" title="YouTube video player" width="560"></iframe></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
