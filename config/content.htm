@@ -38,7 +38,191 @@
 <p>完成上述流程整理後, 請將 HW1 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 1 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
-<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w13</h3>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+ 
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'red'
+ctx.beginPath() 
+ctx.rect(0, 0, 200, 200)
+ctx.stroke()</pre>
+<p></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+ 
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'red'
+ctx.beginPath() 
+ctx.rect(0, 0, 200, 200)
+ctx.stroke()
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'red'
+ctx.beginPath() 
+ctx.rect(100, 100, 200, 200)
+ctx.stroke()</pre>
+<p></p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+ 
+canvas = html.CANVAS(width=500, height=500)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+ 
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 4
+
+#混色的
+ctx.globalCompositeOperation = "lighter"
+
+
+#黑邊圓*2(每個畫四個邊邊)
+ctx.strokeStyle = 'black'
+#第一個圓
+ctx.beginPath()
+ctx.arc(160, 160, 141, 0.25 * math.pi,0.75 * math.pi)
+ctx.fillStyle = "HotPink"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(160, 160, 141, 0.75 * math.pi,1.25 * math.pi)
+ctx.fillStyle = "Aquamarine"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(160, 160, 141, 1.25 * math.pi,1.75 * math.pi)
+ctx.fillStyle = "GreenYellow"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(160, 160, 141, 1.75 * math.pi,0.25 * math.pi)
+ctx.fillStyle = "Khaki"
+ctx.fill()
+ctx.stroke()
+
+#第二個圓
+ctx.beginPath()
+ctx.arc(260, 260, 141, 1.25 * math.pi,1.75 * math.pi)
+ctx.fillStyle = "Navy"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(260, 260, 141, 1.75 * math.pi,0.25 * math.pi)
+ctx.fillStyle = "Linen"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(260, 260, 141, 0.25 * math.pi,0.75 * math.pi)
+ctx.fillStyle = "LightPink"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(260, 260, 141, 0.75 * math.pi,1.25 * math.pi)
+ctx.fillStyle = "Maroon"
+ctx.fill()
+ctx.stroke()
+
+
+#紅方形*2(4個三角形)
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(60,60)
+ctx.lineTo(60,260)
+ctx.lineTo(260,260)
+ctx.fillStyle = "Gold"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(60,60)
+ctx.lineTo(260,60)
+ctx.lineTo(260,260)
+ctx.fillStyle = "Indigo"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(360,160)
+ctx.lineTo(360,360)
+ctx.fillStyle = "Cyan"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(160,360)
+ctx.lineTo(360,360)
+ctx.fillStyle = "SpringGreen"
+ctx.fill()
+ctx.stroke()
+
+ 
+#重疊的小方型
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(160,260)
+ctx.lineTo(260,260)
+ctx.fillStyle = "Turquoise"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(260,160)
+ctx.lineTo(260,260)
+ctx.fillStyle = "SlateBlue"
+ctx.fill()
+ctx.stroke()
+
+
+#籃斜線
+ctx.strokeStyle = 'blue'
+ctx.beginPath() 
+ctx.moveTo(60, 60)
+ctx.lineTo(360, 360)
+ctx.stroke()
+</script>
+</p><h3>w12</h3>
+<p>1.</p>
 <h3>w11</h3>
 <p>1.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
@@ -117,16 +301,20 @@ grid(10, 10, gs)
 # 绘制圆形，圆心为(5, 5)，半径为4个像素（对应网格大小）
 drawCircle(5 * gs, 5 * gs, 4 * gs)
 </pre>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/UMrDbOUAwmU" width="560"></iframe></p><h3>w10</h3>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/TohG2yshfyc" width="560"></iframe><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hBXjqyET7l8" width="560"></iframe><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/LrRYGSHrhRo" width="560"></iframe></p><h3>w7</h3>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/9YxqYS4V9Ms?si=A2K6yY3n3zlQpMiS" title="YouTube video player" width="560"></iframe></p><h1>HW 2</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/UMrDbOUAwmU" width="560"></iframe></p>
+<h3>w10</h3>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/TohG2yshfyc" width="560"></iframe><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/hBXjqyET7l8" width="560"></iframe><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/LrRYGSHrhRo" width="560"></iframe></p>
+<h3>w7</h3>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/9YxqYS4V9Ms?si=A2K6yY3n3zlQpMiS" title="YouTube video player" width="560"></iframe></p>
+<h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):</p>
 <p>PART 2: Introduction to lists and if/else statements</p>
 <p>PART 3: Introduction to the for loop</p>
-<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p><h2>HW 2 Exam</h2>
+<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
+<h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>HW 3</h1>
@@ -154,7 +342,7 @@ drawCircle(5 * gs, 5 * gs, 4 * gs)
 <p style="padding-left: 60px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
 <p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 4 Exam</h2>
-<br/><br/><br/>HW7
+<p><br/><br/><br/>HW7</p>
 <p></p>
 <p></p>
 <p>每六人為一組進行協同程式練習</p>

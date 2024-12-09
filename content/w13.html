@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,16 +141,190 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4 Exam.html'>Next</a> >> HW 4 Exam<br /><h1>HW 4</h1>
-<h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
-<p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
-<p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
-<p style="padding-left: 30px;">利用 <a href="https://manual.coppeliarobotics.com/en/zmqRemoteApiOverview.htm">Python</a> 跨網路控制瀏覽器上的機電模擬系統</p>
-<p style="padding-left: 30px;">範例:</p>
-<p style="padding-left: 60px;"><a href="./../downloads/cd2023_pj3ag4_zmq_football_4.7.7z">cd2023_pj3ag4_zmq_football_4.7.7z</a></p>
-<p style="padding-left: 60px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
-<p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
-<br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4 Exam.html'>Next</a> >> HW 4 Exam</div>
+    <div id="tipue_search_content">HW 1 Exam << <a href='HW 1 Exam.html'>Previous</a> <a href='w12.html'>Next</a> >> w12<br /><h1>w13</h1>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+ 
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'red'
+ctx.beginPath() 
+ctx.rect(0, 0, 200, 200)
+ctx.stroke()</pre>
+<p></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+ 
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'red'
+ctx.beginPath() 
+ctx.rect(0, 0, 200, 200)
+ctx.stroke()
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'red'
+ctx.beginPath() 
+ctx.rect(100, 100, 200, 200)
+ctx.stroke()</pre>
+<p></p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+ 
+canvas = html.CANVAS(width=500, height=500)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+ 
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 4
+
+#混色的
+ctx.globalCompositeOperation = "lighter"
+
+
+#黑邊圓*2(每個畫四個邊邊)
+ctx.strokeStyle = 'black'
+#第一個圓
+ctx.beginPath()
+ctx.arc(160, 160, 141, 0.25 * math.pi,0.75 * math.pi)
+ctx.fillStyle = "HotPink"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(160, 160, 141, 0.75 * math.pi,1.25 * math.pi)
+ctx.fillStyle = "Aquamarine"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(160, 160, 141, 1.25 * math.pi,1.75 * math.pi)
+ctx.fillStyle = "GreenYellow"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(160, 160, 141, 1.75 * math.pi,0.25 * math.pi)
+ctx.fillStyle = "Khaki"
+ctx.fill()
+ctx.stroke()
+
+#第二個圓
+ctx.beginPath()
+ctx.arc(260, 260, 141, 1.25 * math.pi,1.75 * math.pi)
+ctx.fillStyle = "Navy"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(260, 260, 141, 1.75 * math.pi,0.25 * math.pi)
+ctx.fillStyle = "Linen"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(260, 260, 141, 0.25 * math.pi,0.75 * math.pi)
+ctx.fillStyle = "LightPink"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(260, 260, 141, 0.75 * math.pi,1.25 * math.pi)
+ctx.fillStyle = "Maroon"
+ctx.fill()
+ctx.stroke()
+
+
+#紅方形*2(4個三角形)
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.moveTo(60,60)
+ctx.lineTo(60,260)
+ctx.lineTo(260,260)
+ctx.fillStyle = "Gold"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(60,60)
+ctx.lineTo(260,60)
+ctx.lineTo(260,260)
+ctx.fillStyle = "Indigo"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(360,160)
+ctx.lineTo(360,360)
+ctx.fillStyle = "Cyan"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(160,360)
+ctx.lineTo(360,360)
+ctx.fillStyle = "SpringGreen"
+ctx.fill()
+ctx.stroke()
+
+ 
+#重疊的小方型
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(160,260)
+ctx.lineTo(260,260)
+ctx.fillStyle = "Turquoise"
+ctx.fill()
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(260,160)
+ctx.lineTo(260,260)
+ctx.fillStyle = "SlateBlue"
+ctx.fill()
+ctx.stroke()
+
+
+#籃斜線
+ctx.strokeStyle = 'blue'
+ctx.beginPath() 
+ctx.moveTo(60, 60)
+ctx.lineTo(360, 360)
+ctx.stroke()
+</script>
+</p><br />HW 1 Exam << <a href='HW 1 Exam.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
         
     <!-- footer -->
       <div class="container">
