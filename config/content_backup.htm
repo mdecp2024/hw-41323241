@@ -222,9 +222,24 @@ ctx.lineTo(360, 360)
 ctx.stroke()
 </script>
 </p>
-<p>我覺得這次很有難度要利用很多種程式碼做出一個各種形狀圓.方形還要塗色</p><h3>w12</h3>
-<p>1.</p>
-<h3>w11</h3>
+<p>我覺得這次很有難度要利用很多種程式碼做出一個各種形狀圓.方形還要塗色</p><h3>w12_hw</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 5  # 總共的行數
+space = '_'
+'''
+for i in range(n):  # 對於每一行
+    # 印出空格
+    print(space * (n - i - 1), end='') 
+'''
+"""
+for i in range(n):  # 對於每一行
+    # 印出空格
+    print(space * (n - i - 1), end='') 
+"""
+for i in range(n):  # 對於每一行
+    # 印出空格
+    #print(space * (n - i - 1), end='') 
+    print("目前數字"+ str(i))  # 每行印出 2*i + 1 個星號</pre>
+<p><br/><br/></p><h3>w11_hw</h3>
 <p>1.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
 
@@ -322,7 +337,7 @@ drawCircle(5 * gs, 5 * gs, 4 * gs)
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
-<p>def print_number_pyramid(rows):<br/> num = 1<br/> <br/> <br/> for i in range(rows):<br/> # 打印前導空格<br/> print(' ' * (rows - i - 1), end='')<br/> # 打印數字<br/> for j in range(i + 1):<br/> print(num, end=' ')<br/> num += 1<br/> # 換行<br/> print()</p>
+<p>def print_number_pyramid(rows):<br/> num = 1<br/> <br/> <br/> for i in range(rows):<br/> # 打印前導空格<br/> print(' ' * (rows - i - 1), end='')<br/> # 打印數字<br> for j in range(i + 1):<br/> print(num, end=' ')<br/> num += 1<br/> # 換行<br/> print()</br></p>
 <p># 設置金字塔的行數<br/>rows = 10</p>
 <p>print_number_pyramid(rows)</p>
 <p>                   1 <br/>                 2  3 <br/>               4  5  6 <br/>             7  8  9  10 <br/>          11 12 13 14 15 <br/>        16 17 18 19 20 21 <br/>      22 23 24 25 26 27 28 <br/>    29 30 31 32 33 34 35 36 <br/>  37 38 39 40 41 42 43 44 45 <br/>46 47 48 49 50 51 52 53 54 55 <br/><br/><img alt="" height="302" src="/images/螢幕擷取畫面 2024-10-09 113708.png" width="562"/></p>
